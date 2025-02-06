@@ -2,11 +2,26 @@ import { atom, useAtom } from "jotai";
 import { useEffect } from "react";
 
 const pictures = [
-  "phy1",
+  "phy1", 
   "phy2",
+  "phy5",
   "phy4",
   "phy8",
   "phy9",
+  "phy7",
+  "phy12",
+  "phy15",
+  "phy14",
+  "phy13",
+  "cny",
+  "phy10",
+  "phy16",
+  "phy17",
+  "phy18",
+  "phy19",
+  "phy20",
+  "phy21",
+  "phy22",
 ];
 
 export const pageAtom = atom(0);

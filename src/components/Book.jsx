@@ -68,14 +68,14 @@ pageGeometry.setAttribute(
 );
 
 const whiteColor = new Color("white");
-const emissiveColor = new Color("orange");
+const emissiveColor = new Color("");
 
 const pageMaterials = [
   new MeshStandardMaterial({
     color: whiteColor,
   }),
   new MeshStandardMaterial({
-    color: "#111",
+    color: "#11",
   }),
   new MeshStandardMaterial({
     color: whiteColor,
@@ -88,7 +88,6 @@ const pageMaterials = [
 pages.forEach((page) => {
   useTexture.preload(`/textures/${page.front}.jpg`);
   useTexture.preload(`/textures/${page.back}.jpg`);
-  useTexture.preload(`/textures/book-cover-roughness.jpg`);
 });
 
 const Page = ({ number, front, back, page, opened, bookClosed, ...props }) => {
