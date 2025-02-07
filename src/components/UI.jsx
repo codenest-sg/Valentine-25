@@ -22,6 +22,8 @@ const pictures = [
   "phy20",
   "phy21",
   "phy22",
+  "phy25",
+  "phy24",
 ];
 
 export const pageAtom = atom(0);
