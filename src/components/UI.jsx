@@ -75,7 +75,7 @@ export const UI = () => {
             {/* Conditionally Render Go to Cover Button */}
             {page === pages.length && (
               <button
-                className="text-sm md:text-lg text-white underline"
+                className="text-sm md:text-lg ml-1 text-white underline"
                 onClick={() => setPage(0)}
               >
                 Main cover
