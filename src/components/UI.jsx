@@ -2,7 +2,7 @@ import { atom, useAtom } from "jotai";
 import { useEffect } from "react";
 
 const pictures = [
-  "phy1", 
+  "phy1",
   "phy2",
   "phy5",
   "phy4",
@@ -60,8 +60,44 @@ export const UI = () => {
           className="pointer-events-auto mt-10 ml-10"
         >
         </a>
-        <div className="w-full overflow-auto pointer-events-auto flex justify-center">
-          <div className="overflow-auto flex items-center gap-4 max-w-full p-10">
+        <div className="w-full overflow-auto pointer-events-auto flex justify-center items-center">
+          <div className="flex items-center justify-center gap-2 md:gap-4 p-4 md:p-10">
+            {/* Previous Button */}
+            <button
+              className={`transition-all duration-300 px-2 py-1 md:px-3 md:py-2 rounded-md md:rounded-xl text-sm md:text-md lg:text-xl border w-20 md:w-28 lg:w-32 ${page === 0 ? "bg-gray-400 text-white cursor-not-allowed" : "bg-black/30 text-white"
+                }`}
+              onClick={() => page > 0 && setPage(page - 1)}
+              disabled={page === 0}
+            >
+              Previous
+            </button>
+
+            {/* Conditionally Render Go to Cover Button */}
+            {page === pages.length && (
+              <button
+                className="text-sm md:text-lg text-white underline"
+                onClick={() => setPage(0)}
+              >
+                Main cover
+              </button>
+            )}
+
+            {/* Display Current Page */}
+            <div className="text-sm md:text-lg text-white">
+              {page === 0 ? "Cover" : page === pages.length ? " " : `Page ${page}`}
+            </div>
+
+            {/* Next Button */}
+            <button
+              className={`transition-all duration-300 px-2 py-1 md:px-3 md:py-2 rounded-md md:rounded-xl text-sm md:text-md lg:text-xl border w-20 md:w-28 lg:w-32 ${page === pages.length ? "bg-gray-400 text-white cursor-not-allowed" : "bg-black/30 text-white"
+                }`}
+              onClick={() => page < pages.length && setPage(page + 1)}
+              disabled={page === pages.length}
+            >
+              Next
+            </button>
+          </div>
+          {/* <div className="overflow-auto flex items-center gap-4 max-w-full p-10">
             {[...pages].map((_, index) => (
               <button
                 key={index}
@@ -85,9 +121,9 @@ export const UI = () => {
             >
               Back Cover
             </button>
-          </div>
+          </div> */}
         </div>
-      </main> 
+      </main>
     </>
   );
 };
