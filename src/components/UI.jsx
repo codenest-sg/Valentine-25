@@ -83,9 +83,9 @@ export const UI = () => {
             )}
 
             {/* Display Current Page */}
-            <div className="text-sm md:text-lg text-white">
+            {/* <div className="text-sm md:text-lg text-white">
               {page === 0 ? "Cover" : page === pages.length ? " " : `Page ${page}`}
-            </div>
+            </div> */}
 
             {/* Next Button */}
             <button
